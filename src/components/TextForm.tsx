@@ -22,7 +22,7 @@ function TextForm(props: Props) {
         />
       ) : (
         <div>
-          <p>{props.label}</p>
+          <p className="font-thin">{props.label}</p>
           <input
             className={inputClass}
             type="text"

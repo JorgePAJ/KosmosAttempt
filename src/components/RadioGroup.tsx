@@ -7,7 +7,7 @@ interface Props {
 export default function RadioGroup(props: Props) {
   return (
     <div>
-      <label className="text-base font-medium text-gray-900">
+      <label className="font-thin">
         {props.label}
       </label>
 
