@@ -1,5 +1,7 @@
 import React from "react";
 import { json } from "stream/consumers";
+import RadioGroup from "./RadioGroup";
+import SelectMenu from "./SelectMenu";
 import TextForm from "./TextForm";
 
 interface Props {
@@ -11,11 +13,37 @@ function DynamicForm(props: Props) {
     <div>
       {props.Form.map((item: any) => {
         return (
-          <TextForm
-            label={item.label}
-            type="live"
-            placeholder={item.placeholder}
-          />
+          <div>
+            {item.type === "text" && (
+              <TextForm label={item.label} type={item.type} placeholder={item.placeholder} />
+            )}
+          </div>
+        );
+      })}
+      {props.Form.map((item: any) => {
+        return (
+          <div className="">
+            {item.type === "select" && (
+              <SelectMenu
+                label={item.label}
+                list={item.list}
+                setType={() => {}}
+              />
+            )}
+          </div>
+        );
+      })}
+      {props.Form.map((item: any) => {
+        return (
+          <div className="">
+            {item.type === "radio" && (
+              <RadioGroup
+                label={item.label}
+                list={item.list}
+                setType={() => {}}
+              />
+            )}
+          </div>
         );
       })}
     </div>

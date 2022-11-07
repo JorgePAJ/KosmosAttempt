@@ -10,12 +10,10 @@ interface Props {
 
 function TextForm(props: Props) {
   const inputClass =
-    "border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent";
+    "bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-60 border border-gray-100 p-2 text-white placeholder-gray-200";
 
   return (
     <div className={`flex flex-col ${props.type === "new" && "gap-1"}`}>
-      <p>{props.label}</p>
-
       {props.type === "new" ? (
         <input
           onChange={(e) => props.setLabel(e.target.value)}
@@ -23,16 +21,19 @@ function TextForm(props: Props) {
           placeholder="Label of the field"
         />
       ) : (
-        <input
-          className={inputClass}
-          type="text"
-          placeholder={props.placeholder}
-        ></input>
+        <div>
+          <p>{props.label}</p>
+          <input
+            className={inputClass}
+            type="text"
+            placeholder={props.placeholder}
+          ></input>
+        </div>
       )}
       {props.type === "new" && (
         <input
           onChange={(e) => props.setPlaceholder(e.target.value)}
-          className={inputClass}
+          className={inputClass + " mb-7"}
           placeholder="Placeholder of the field"
         />
       )}
