@@ -3,6 +3,7 @@ interface Props {
   list: string[];
   setType: any;
 }
+
 export default function RadioGroup(props: Props) {
   return (
     <div>
