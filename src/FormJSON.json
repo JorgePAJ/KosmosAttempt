@@ -1,0 +1,14 @@
+[
+    {
+        "component": "text",
+        "label": "First Name",
+        "type": "text",
+        "_uid": "5f9c1c0c-1c1c-4b1c-9c0c-1c1c4b1c9c0c"
+    },
+    {
+        "component": "text",
+        "label": "Last Name",
+        "type": "text",
+        "_uid": "5f9c1c0c-1c1c-4b1c-9c0c-1c1c4b1c9c0c"
+    }
+]
